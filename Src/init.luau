@@ -61,7 +61,7 @@ local SharedTable = shared or _G or (getgenv and getgenv()) or getfenv(1)
 local New = Creator.New
 
 local BaseContainer = New("ScreenGui", {
-	Name = "Fluent Renewed Base GUI"
+	Name = "Fluent Base GUI"
 })
 
 BaseContainer.Parent = (function() -- https://github.com/Pepsied-5229/Pepsi-UI-Library/blob/main/Pepsi-UI-Library.lua#L503
@@ -108,12 +108,12 @@ BaseContainer.Parent = (function() -- https://github.com/Pepsied-5229/Pepsi-UI-L
 	return error("Seriously bad engine. Can't find a place to store the GUI. Robust code can't help this much incompetence.", 0)
 end)()
 
-SharedTable.FluentRenewed = SharedTable.FluentRenewed or {}
+SharedTable.Fluent = SharedTable.Fluent or {}
 
 NotificationModule:Init(BaseContainer)
 
 local Library = {
-	Version = "1.0.5",
+	Version = "0.1.2",
 
 	OpenFrames = {},
 	Options = {},
@@ -135,7 +135,7 @@ local Library = {
 	Unloaded = false,
 	Loaded = true,
 
-	Theme = "Dark",
+	Theme = "Darker",
 	DialogOpen = false,
 	UseAcrylic = false,
 	Acrylic = false,
@@ -266,7 +266,7 @@ function Library:Window(Config: {
 	if not Config.Title then
 		local Success, Game_Info = pcall(MarketplaceService.GetProductInfo, MarketplaceService, game.PlaceId)
 		
-		Config.Title = Success and Game_Info.Name or "Fluent Renewed"
+		Config.Title = Success and Game_Info.Name or "Fluent"
 	end
 
 	Config.MinSize = if typeof(Config.MinSize) == "Vector2" then Config.MinSize else Vector2.new(470, 380)
@@ -291,18 +291,18 @@ function Library:Window(Config: {
 		MinSize = Config.MinSize,
 
 		Title = Config.Title,
-		SubTitle = Config.SubTitle or "Made with Fluent Renewed",
+		SubTitle = Config.SubTitle or "Made with Fluent",
 
 		TabWidth = Config.TabWidth or 160,
 		Mobile = Config.Mobile or {
 			GetIcon = function(IsMinimized: boolean): { Image: string, ImageRectOffset: Vector2, ImageRectSize: Vector2 }
-				return Library.Utilities:GetIcon(IsMinimized and "phosphor-eye" or "phosphor-eye-slash")
+				return Library.Utilities:GetIcon(IsMinimized and "Hoshi" or "phosphor-eye-slash")
 			end,
 			Size = UDim2.fromOffset(30, 30)
 		}
 	}
 
-	BaseContainer.Name = `FluentRenewed_{Config.Title}`
+	BaseContainer.Name = `Fluent_{Config.Title}`
 
 	Library.CreatedWindow = Window
 	Library:SetTheme(Library.Theme)

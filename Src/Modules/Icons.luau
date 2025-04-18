@@ -98,6 +98,7 @@ return {
 
 		return nil :: never
 	end,
+	['Hoshi'] = "rbxassetid://95445676600352",
 	['Close'] = "rbxassetid://9886659671",
 	['Min'] = "rbxassetid://9886659276",
 	['Max'] = "rbxassetid://9886659406",

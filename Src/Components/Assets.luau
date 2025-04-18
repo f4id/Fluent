@@ -3,4 +3,5 @@ return {
 	Min = "rbxassetid://9886659276",
 	Max = "rbxassetid://9886659406",
 	Restore = "rbxassetid://9886659001",
+	Hoshi = "rbxassetid://95445676600352"
 }

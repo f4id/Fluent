@@ -1,11 +1,11 @@
 local httpService = game:GetService("HttpService")
 
 local InterfaceManager = {} do
-	InterfaceManager.Folder = "FluentRenewedSettings"
+	InterfaceManager.Folder = "FluentSettings"
 
     InterfaceManager.Settings = {
-        Theme = "Dark",
-        Acrylic = true,
+        Theme = "Darker",
+        Acrylic = false,
         Transparency = true,
         MenuKeybind = Enum.KeyCode.RightControl
     }
@@ -19,7 +19,7 @@ local InterfaceManager = {} do
 		self.Library = library
 
 		InterfaceManager.Settings = {
-			Theme = self.Library.Theme or "Dark",
+			Theme = self.Library.Theme or "Darker",
 			Acrylic = self.Library.UseAcrylic or true,
 			Transparency = self.Library.Transparency or true,
 			MenuKeybind = self.Library.MinimizeKey or Enum.KeyCode.RightControl
